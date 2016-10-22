@@ -29,6 +29,7 @@ const SubmitValidationForm = (props) => {
   const { error, handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
+
       <Field name="username" type="text" component={renderField} label="Username"/>
       <Field name="password" type="password" component={renderField} label="Password"/>
       {error && <strong>{error}</strong>}

@@ -16,7 +16,7 @@ const routes = (
         <Route path="info" component={CreateBasicInformation}/>
         <Route path="coc" component={CreateCoCInformation}/>
         <Route path="unemployment" component={CreateUnempInformation}/>
-            <Route path="organization" component={CreateOrganizationForm}/>
+        <Route path="organization" component={CreateOrganizationForm}/>
     </Route>
 );
 

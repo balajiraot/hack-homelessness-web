@@ -1,7 +1,6 @@
 import React from 'react'
 import {submitOrgInfo,resetOrgInfo} from '../orgInfoActions'
 import {connect} from 'react-redux'
-
 import OrganizationForm from './OrganizationForm'
 
 class CreateOrgInfo extends React.Component {
@@ -9,7 +8,7 @@ class CreateOrgInfo extends React.Component {
     return (
       <div>
         <h3>Enter Organization Information</h3>
-        <OrgInformationForm onSubmit={this.props.onSubmitOrgInfo} />
+        <OrganizationForm onSubmit={this.props.onSubmitOrgInfo} />
       </div>
     )
   }

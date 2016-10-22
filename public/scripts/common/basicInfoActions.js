@@ -31,7 +31,7 @@ export function submitBasicInfo(formData,dispatch){
   console.log('in submit basic info : '+ JSON.stringify(formData))
   //todo post to api
   dispatch(submitBasicInfoSuccess(formData))
-  dispatch(push(`${APP.BASE_PATH}`))//todo goto next screen
+  dispatch(push(`${APP.BASE_PATH}/organization`))//todo goto next screen
   //dispatch submit failure - todo
 }
 
