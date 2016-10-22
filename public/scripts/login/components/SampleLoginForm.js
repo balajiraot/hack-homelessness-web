@@ -29,18 +29,14 @@ const SubmitValidationForm = (props) => {
   const { error, handleSubmit, pristine, reset, submitting } = props
   return (
     <form onSubmit={handleSubmit}>
-        <div className="greeting form-group">
-        <Field name="username" type="text" component={renderField} label="Username"/>
-            </div>
-        <div className="greeting form-group">
-      <Field name="password" type="password" component={renderField} label="Password"/>
+        <div className="greeting">
+        <Field classname= "form-group" name="username" type="text" component={renderField} label="Username"/>
+        <Field classname= "form-group" name="password" type="password" component={renderField} label="Password"/>
       {error && <strong>{error}</strong>}
             </div>
-        <div className="greeting form-group">
-        <button type="submit" disabled={submitting}>Login</button>
-            </div>
-        <div className="greeting form-group">
-        <button type="button" disabled={pristine || submitting} onClick={reset}>Register</button>
+        <div className="greeting btn-toolbar">
+        <button className="btn btn-primary form-group" type="submit" disabled={submitting}>Login</button>
+        <button className="btn btn-default form-group" type="button" disabled={pristine || submitting} onClick={reset}>Register</button>
         </div>
     </form>
   )
