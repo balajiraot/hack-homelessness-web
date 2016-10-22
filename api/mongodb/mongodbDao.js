@@ -32,10 +32,11 @@ mongoDb.save = (obj, collectionName, callback) => {
 mongoDb.getClientBy = (queryParams, collectionName, callback) => {
   const db = global.db;
   const clientCollection = db.collection(collectionName);
-
   Object.keys(queryParams).forEach((key)=>{
     if(queryParams[key]){
       queryParams[key] ={"$regex":queryParams[key], $options:"i"}
+    }else{
+      delete queryParams[key]
     }
   })
 
