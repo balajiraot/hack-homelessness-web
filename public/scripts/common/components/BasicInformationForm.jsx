@@ -55,6 +55,7 @@ const renderPwdField = ({ input, label, type, meta: { touched, error } }) => {
 const BasicInformationForm = (props) =>{
     const { error, handleSubmit, pristine, reset, submitting } = props
     return (
+      <div className="col-md-3">
         <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <Field name="firstName" component={renderField} type="text" label="FirstName" placeholder="First Name"/>
@@ -110,6 +111,7 @@ const BasicInformationForm = (props) =>{
                     <button className="btn btn-default" type="button" disabled={pristine || submitting} onClick={reset} >Clear</button>
                 </div>
             </form>
+        </div>
     )
 };
 
