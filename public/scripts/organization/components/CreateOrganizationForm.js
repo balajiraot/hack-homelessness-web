@@ -1,5 +1,5 @@
 import React from 'react'
-import {submitUnempInfo,resetUnempInfo} from '../unempInfoActions'
+import {submitUnempInfo,resetUnempInfo} from '../orgInfoActions'
 import {connect} from 'react-redux'
 
 import UnempInformationForm from './OrganizationForm'
