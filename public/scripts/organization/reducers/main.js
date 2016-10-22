@@ -1,4 +1,4 @@
 import {combineReducers} from 'redux'
-import unempInfoReducer from './unempInfo'
+import orgInfoReducer from './orgInfo'
 
-export default combineReducers({unempInformationForm:unempInfoReducer})
+export default combineReducers({unempInformationForm:orgInfoReducer})

@@ -67,5 +67,5 @@ const OrganizationForm = (props) =>{
 
 export default reduxForm({
     form: 'organizationInformation'  // a unique identifier for this form
-})(UnempInformationForm)
+})(OrganizationForm)
 

@@ -6,6 +6,7 @@ import Login from '../login/components/CreateLogin'
 import CreateBasicInformation from '../common/components/CreateBasicInformation'
 import CreateCoCInformation from '../coc/components/CreateCoCInformation'
 import CreateUnempInformation from '../unemployment/components/CreateUnempInformation'
+import CreateOrganizationForm from '../organization/components/CreateOrganizationForm'
 
 
 const routes = (
@@ -15,6 +16,7 @@ const routes = (
         <Route path="info" component={CreateBasicInformation}/>
         <Route path="coc" component={CreateCoCInformation}/>
         <Route path="unemployment" component={CreateUnempInformation}/>
+            <Route path="organization" component={CreateOrganizationForm}/>
     </Route>
 );
 

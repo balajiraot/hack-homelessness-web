@@ -2,40 +2,40 @@ import {ACTIONS} from './constants'
 import {APP} from '../constants/constants'
 import {push, goBack} from "react-router-redux"
 
-const requestSubmitUnempInfo = (unempInfo) =>{
+const requestSubmitOrgInfo = (orgInfo) =>{
   return {
-    type:ACTIONS.SUBMIT_UNEMP_INFO,
-    unempInfo
+    type:ACTIONS.SUBMIT_ORG_INFO,
+    orgInfo
   }
 }
-const submitUnempInfoSuccess = (unempInfo) =>{
+const submitOrgInfoSuccess = (orgInfo) =>{
   return {
-    type:ACTIONS.SUBMIT_UNEMP_INFO_SUCCESS,
-    unempInfo
+    type:ACTIONS.SUBMIT_ORG_INFO_SUCCESS,
+    orgInfo
   }
 }
-const submitUnempInfoFailure = (unempInfo) =>{
+const submitOrgInfoFailure = (orgInfo) =>{
   return {
-    type:ACTIONS.SUBMIT_UNEMP_INFO_FAILURE,
-    unempInfo
+    type:ACTIONS.SUBMIT_ORG_INFO_FAILURE,
+    orgInfo
   }
 }
-const requestResetUnempInfo = (unempInfo) =>{
+const requestResetOrgInfo = (orgInfo) =>{
   return {
-    type:ACTIONS.RESET_UNEMP_INFO,
-    unempInfo
+    type:ACTIONS.RESET_ORG_INFO,
+    orgInfo
   }
 }
 
-export function submitUnempInfo(formData,dispatch){
-  console.log('in submit unemp info : '+ JSON.stringify(formData))
+export function submitOrgInfo(formData,dispatch){
+  console.log('in submit org info : '+ JSON.stringify(formData))
   //todo post to api
-  dispatch(submitUnempInfoSuccess(formData))
+  dispatch(submitOrgInfoSuccess(formData))
   dispatch(push(`${APP.BASE_PATH}`))//todo goto next screen
   //dispatch submit failure - todo
 }
 
-export function resetUnempInfo(formData,dispatch){
-  //todo reset unemp info
-  dispatch(requestResetUnempInfo({unempInfo:'',unempInfo:''}))
+export function resetOrgInfo(formData,dispatch){
+  //todo reset org info
+  dispatch(requestResetOrgInfo({orgInfo:'',orgInfo:''}))
 }
