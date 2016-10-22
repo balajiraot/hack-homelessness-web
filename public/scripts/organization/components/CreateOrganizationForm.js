@@ -7,7 +7,9 @@ class CreateOrgInfo extends React.Component {
   render() {
 
     const onSubmit = (orgData)=>{
-      const formData = Object.assign({},orgData,this.props.basicInfo)
+      const data = {};
+      data[orgData.organization] = orgData
+      const formData = Object.assign({},this.props.basicInfo,data)
       this.props.onSubmitOrgInfo(formData)
     }
 

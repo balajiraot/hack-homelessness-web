@@ -41,7 +41,7 @@ export function submitOrgInfo(formData,dispatch){
       .set({"Authorization": "Basic YXBpdXNlcjp0ZXN0MTIzJA=="})
       .send(formData)
       .then(()=>{
-        dispatch(push(`${APP.BASE_PATH}/info`))
+        dispatch(push(`${APP.BASE_PATH}/success`))
       })
       .catch((error)=>{
         console.error("Error saving user info to db", error)

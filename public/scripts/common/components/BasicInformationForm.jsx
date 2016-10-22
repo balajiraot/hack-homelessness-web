@@ -64,7 +64,7 @@ const BasicInformationForm = (props) =>{
                     <Field name="ethnicity" component={renderField} type="text" label="Ethnicity" placeholder="Ethnicity"/>
                 </div>
                 <div className="form-group">
-                    <Field name="ssn" component={renderField} type="number" label="SSN" placeholder="SSN"/>
+                    <Field name="ssn" component={renderField} type="number" maxLength="9" label="SSN" placeholder="SSN"/>
                 </div>
                 <div className="form-group">
                     <Field name="dob" component={renderField} type="date" label="DateOfBirth" placeholder="DateOfBirth"/>

@@ -2,6 +2,7 @@ import React from 'react';
 import {Route, IndexRoute} from 'react-router';
 import RootComponent from './RootComponent';
 import Hello from './Hello';
+import Success from './Success';
 import Login from '../login/components/CreateLogin'
 import CreateBasicInformation from '../common/components/CreateBasicInformation'
 import CreateCoCInformation from '../coc/components/CreateCoCInformation'
@@ -20,6 +21,7 @@ const routes = (
         <Route path="unemployment" component={CreateUnempInformation}/>
         <Route path="organization" component={CreateOrganizationForm}/>
         <Route path="medical" component={MedicalInformationForm}/>
+        <Route path="success" component={Success}/>
     </Route>
 );
 
