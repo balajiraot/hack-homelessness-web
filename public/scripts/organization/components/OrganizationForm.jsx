@@ -53,8 +53,8 @@ const OrganizationForm = (props) =>{
                         <option value="Unemployment">Unemployment</option>
                         <option value="Medical">Medical</option>
                         <option value="FinancialServices">FinancialServices</option>
-                        <option value="UtilityCompanies">TD-Technology Development</option>
-                        <option value="Continuum of Care">PRDTST-PRODUCTION TESTING</option>
+                        <option value="UtilityCompanies">UtilityCompanies</option>
+                        <option value="Continuum of Care">Continuum of Care</option>
                     </Field>
                 </div>
                 <div className="form-group">

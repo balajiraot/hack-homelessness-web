@@ -105,6 +105,14 @@ const BasicInformationForm = (props) =>{
                 <div className="form-group">
                     <Field name="citizenshipStatus" component={renderField} type="text" label="CitizenshipStatus" placeholder="CitizenshipStatus"/>
                 </div>
+                <div className="form-group">
+                    <Field name="veteran" component={renderField} type="text" label="VeteralStatus" placeholder="VeteranStatus"/>
+                </div>
+                <div className="form-group">
+                    <Field name="maritalStatus" component={renderField} type="text" label="MaritalStatus(S/M/D)" placeholder="MaritalStatus"/>
+                </div>
+
+
 
                 <div className="btn-toolbar">
                     <button className="btn btn-primary" type="submit" disabled={pristine || submitting}  >Next</button>
