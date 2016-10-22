@@ -6,7 +6,9 @@ mongoDb.save = (obj, collectionName, callback) => {
   const db = global.db;
   const collection = db.collection(collectionName)
 
-  obj._id = new ObjectID.createFromHexString(obj._id);
+  if(obj._id) {
+    obj._id = new ObjectID.createFromHexString(obj._id);
+  }
 
   collection.save(obj,(err,results)=>{
     if(err){
