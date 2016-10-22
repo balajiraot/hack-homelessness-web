@@ -37,7 +37,8 @@ export function submitOrgInfo(formData,dispatch){
   console.log('in submit org info : '+ JSON.stringify(formData))
   //todo post to api
   dispatch(submitOrgInfoSuccess(formData))
-  return agent.post(`${APP.BASE_PATH}/coc`)
+  return agent.post(`${APP.BASE_PATH}/api/coc/client`)
+      .set({"Authorization": "Basic YXBpdXNlcjp0ZXN0MTIzJA=="})
       .send(formData)
       .then(()=>{
         dispatch(push(`${APP.BASE_PATH}/info`))

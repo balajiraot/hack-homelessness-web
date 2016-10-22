@@ -5,17 +5,27 @@ import OrganizationForm from './OrganizationForm'
 
 class CreateOrgInfo extends React.Component {
   render() {
+
+    const onSubmit = (orgData)=>{
+      const formData = Object.assign({},orgData,this.props.basicInfo)
+      this.props.onSubmitOrgInfo(formData)
+    }
+
     return (
       <div>
         <h3>Enter Organization Information</h3>
-        <OrganizationForm onSubmit={this.props.onSubmitOrgInfo} />
+        <OrganizationForm onSubmit={onSubmit.bind(this)} />
       </div>
     )
   }
 }
 
 const mapStateToProps = (state) => {
-  return {}
+
+  var basicInfo = state.basicInfo.basicInformationForm;
+  console.log("in createorg basicinfo : "+ JSON.stringify(basicInfo))
+  var basicInfo = basicInfo.toJSON().basicInfo
+  return {basicInfo}
 };
 const mapStateToDispatch = (dispatch) => {
   return {

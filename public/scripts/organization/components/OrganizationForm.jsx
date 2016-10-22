@@ -3,7 +3,7 @@ import {Field,reduxForm, formValueSelector} from 'redux-form'
 import { connect } from 'react-redux'
 import CoCInformationForm from '../../coc/components/CoCInformationForm'
 import UnempInformationForm from '../../unemployment/components/CreateUnempInformation'
-import MedicalInformationForm from '../../medical/components/MedicalInformationForm.jsx'
+import MedicalInformationForm from '../../medical/components/CreateMedicalInformation'
 
 const renderSelect = ({ input, label, meta: { touched, error }, children })  => {
     return (
@@ -27,6 +27,14 @@ class OrganizationForm extends React.Component {
   render() {
     const {error,organization, handleSubmit, pristine, reset, submitting} = this.props
 
+    const handleFormSubmit = (formData) => {
+        //console.log("in form submit : " + JSON.stringify(formData))
+        console.log("select type : " + this.state.selectType)
+      let resultsUnemp = this.refs.unempInformationForm.submit();
+      let newformData = Object.assign(resultsUnemp);
+        console.log("in form submit after assign  : " + newformData)
+    }
+
     const onSelect = (event) => {
       console.log("In onSelect")
       console.log(event)
@@ -36,11 +44,11 @@ class OrganizationForm extends React.Component {
     const getComponent = (value)=> {
       switch (value) {
         case "Unemployment":
-          return <UnempInformationForm/>
+          return <UnempInformationForm ref="unempInformationForm"/>
         case "Continuum of Care":
-          return <CoCInformationForm/>
+          return <CoCInformationForm ref="cocInformationForm"/>
         case "Medical":
-          return <MedicalInformationForm/>
+          return <MedicalInformationForm ref="medicalInformationForm"/>
         default:
           return null;
       }
@@ -75,7 +83,6 @@ const selector = formValueSelector('organizationInformation')
 
 function mapStateToProps(state) {
   const organization = selector(state,'organization')
-
   return {organization}
 }
 

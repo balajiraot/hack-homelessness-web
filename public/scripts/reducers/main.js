@@ -3,6 +3,7 @@ import {routerReducer} from 'react-router-redux'
 import loginReducer from '../login/reducers/main'
 import basicInfoReducer from '../common/reducers/main'
 import cocInfoReducer from '../common/reducers/main'
+import unempInfoReducer from '../unemployment/reducers/main'
 import orgInfoReducer from '../organization/reducers/main'
 import medicalInfoReducer from '../medical/reducers/main'
 
@@ -14,6 +15,7 @@ export default combineReducers({
   login: loginReducer,
   basicInfo: basicInfoReducer,
   cocInfo: cocInfoReducer,
+  unempInfo: unempInfoReducer,
   orgInfo: orgInfoReducer,
   medicalInfo: medicalInfoReducer
 
