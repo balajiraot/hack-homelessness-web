@@ -1,16 +1,18 @@
-
-
+const ObjectID = require('mongodb').ObjectID;
 const mongoDb ={}
 
 
 mongoDb.save = (obj, collectionName, callback) => {
-  const db = global.db
+  const db = global.db;
   const collection = db.collection(collectionName)
-  collection.insertOne(obj,(err,results)=>{
+
+  obj._id = new ObjectID.createFromHexString(obj._id);
+
+  collection.save(obj,(err,results)=>{
     if(err){
       console.error("Error while saying obj", err)
     }else{
-      callback(err,{id:obj._id})
+      callback(err,{_id:obj._id})
     }
   })
 }
@@ -26,7 +28,7 @@ mongoDb.save = (obj, collectionName, callback) => {
 */
 {}
 mongoDb.getClientBy = (queryParams, collectionName, callback) => {
-  const db = global.db
+  const db = global.db;
   const clientCollection = db.collection(collectionName);
 
   clientCollection.find(queryParams, (err,results)=>{
@@ -37,5 +39,4 @@ mongoDb.getClientBy = (queryParams, collectionName, callback) => {
     }
   });
 }
-
 module.exports = mongoDb

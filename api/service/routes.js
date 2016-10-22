@@ -43,7 +43,6 @@ router.get("/seekers", (req, res) => {
 
   mongodbDao.getClientBy(seekerQueryParams, SEEKER_COLLECTION_NAME, handleResponse(res));
 })
-// ** PUT - /update **
 
 // TODO: End iOS Endpoints
 
