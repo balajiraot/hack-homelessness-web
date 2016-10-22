@@ -1,15 +1,15 @@
 import React from 'react'
-import {submitUnempInfo,resetUnempInfo} from '../orgInfoActions'
+import {submitOrgInfo,resetOrgInfo} from '../orgInfoActions'
 import {connect} from 'react-redux'
 
-import UnempInformationForm from './OrganizationForm'
+import OrganizationForm from './OrganizationForm'
 
-class CreateUnempInfo extends React.Component {
+class CreateOrgInfo extends React.Component {
   render() {
     return (
       <div>
-        <h3>Enter Unemployment Information</h3>
-        <UnempInformationForm onSubmit={this.props.onSubmitUnempInfo} />
+        <h3>Enter Organization Information</h3>
+        <OrgInformationForm onSubmit={this.props.onSubmitOrgInfo} />
       </div>
     )
   }
@@ -20,14 +20,14 @@ const mapStateToProps = (state) => {
 };
 const mapStateToDispatch = (dispatch) => {
   return {
-    onSubmitUnempInfo:(formData)=>{
-      submitUnempInfo(formData,dispatch)
+    onSubmitOrgInfo:(formData)=>{
+      submitOrgInfo(formData,dispatch)
     },
-    onResetUnempInfo : (formData)=>{
-      dispatch(resetUnempInfo(formData))
+    onResetOrgInfo : (formData)=>{
+      dispatch(resetOrgInfo(formData))
     }
   }
 };
 
-export default connect(mapStateToProps,mapStateToDispatch)(CreateUnempInfo)
+export default connect(mapStateToProps,mapStateToDispatch)(CreateOrgInfo)
 
