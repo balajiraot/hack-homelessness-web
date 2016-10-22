@@ -1,19 +1,8 @@
 
 import React from 'react'
 import { Field, reduxForm,SubmissionError } from 'redux-form'
-
-const sleep = ms => new Promise(resolve => setTimeout(resolve, ms))
-function submit(values) {
-  return sleep(1000) // simulate server latency
-    .then(() => {
-      if (![ 'john', 'paul', 'george', 'ringo' ].includes(values.username)) {
-        throw new SubmissionError({ username: 'User does not exist', _error: 'Login failed!' })
-      } else if (values.password !== 'test') {
-        throw new SubmissionError({ password: 'Wrong password', _error: 'Login failed!' })
-      }
-      return {}
-    })
-}
+import {withRouter} from "react-router";
+import {APP} from '../constants'
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => (
   <div>
@@ -26,8 +15,11 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => (
 )
 
 const SubmitValidationForm = (props) => {
-  const { error, handleSubmit, pristine, reset, submitting } = props
-  return (
+  const { error, handleSubmit, pristine, reset, submitting,router } = props
+    const register = () =>{
+        router.push(`${APP.BASE_PATH}/register`)
+    }
+    return (
     <form onSubmit={handleSubmit}>
         <div className="greeting">
         <Field classname= "form-group" name="username" type="text" component={renderField} label="Username"/>
@@ -36,12 +28,15 @@ const SubmitValidationForm = (props) => {
             </div>
         <div className="greeting btn-toolbar">
         <button className="btn btn-primary form-group" type="submit" disabled={submitting}>Login</button>
-        <button className="btn btn-default form-group" type="button" onClick={reset}>Register</button>
+        <button className="btn btn-default form-group" type="button" onClick={register}>Register</button>
         </div>
     </form>
   )
 }
 
-export default reduxForm({
+ const sampleLoginForm = reduxForm({
   form: 'submitValidation'  // a unique identifier for this form
 })(SubmitValidationForm)
+
+
+export default withRouter(sampleLoginForm)
