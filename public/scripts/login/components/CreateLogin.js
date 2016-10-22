@@ -7,12 +7,12 @@ import SampleLoginForm from './SampleLoginForm'
 class CreateLogin extends React.Component {
   render() {
     return (
-      <div>
+        <div className="col-md-3">
         <div class="wrapper col-md-3">
           <img class="img-responsive" src=""/>
         </div>
         <div className="greeting">
-            <h3>Welcome</h3>
+            <h2>Welcome User</h2>
         </div>
         <SampleLoginForm onSubmit={this.props.onSubmitLogin} />
       </div>
