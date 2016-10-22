@@ -42,15 +42,6 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => {
     )
 };
 
-const renderPwdField = ({ input, label, type, meta: { touched, error } }) => {
-    return (
-        <div className={touched && error ? 'has-error form-group':'form-group'}>
-            <label className="control-label">{label}</label>
-            <input className="form-control" {...input} placeholder={label} type={type}/>
-            {touched && error && <div><span id="helpBlock2" className="help-block">{error}</span></div>}
-        </div>
-    )
-};
 
 const BasicInformationForm = (props) =>{
     const { error, handleSubmit, pristine, reset, submitting } = props
@@ -127,19 +118,3 @@ export default reduxForm({
     form: 'basicInformation'  // a unique identifier for this form
 })(BasicInformationForm)
 
-//const basicInformationReduxForm = reduxForm({
-//    form:'basicInformation',
-//    validate
-//})(BasicInformationForm);
-//
-////export default basicInformationReduxForm;
-//
-//export default connect((state) => {
-//    var basicInfo = state.basicInfo.BasicInformationForm.get('basicInfo');
-//    if(!basicInfo) {
-//        basicInfo = {"infoname":"","password":""}//todo initialize
-//    }
-//    console.log('initialvalues : ' + JSON.stringify(basicInfo))
-//    return {initialValues : basicInfo}
-//})(basicInformationReduxForm)
-//
