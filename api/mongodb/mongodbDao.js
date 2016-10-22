@@ -10,7 +10,6 @@ mongoDb.save = (obj, collectionName, callback) => {
     if(err){
       console.error("Error while saying obj", err)
     }
-    console.log("record insert success"+results)
     callback(err,results)
   })
 }
@@ -35,8 +34,6 @@ mongoDb.getClientBy = (queryParams, collectionName, callback) => {
     }else {
       callback(err);
     }
-
-
   });
 }
 
