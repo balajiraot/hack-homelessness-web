@@ -36,7 +36,7 @@ const SubmitValidationForm = (props) => {
             </div>
         <div className="greeting btn-toolbar">
         <button className="btn btn-primary form-group" type="submit" disabled={submitting}>Login</button>
-        <button className="btn btn-default form-group" type="button" disabled={pristine || submitting} onClick={reset}>Register</button>
+        <button className="btn btn-default form-group" type="button" onClick={reset}>Register</button>
         </div>
     </form>
   )

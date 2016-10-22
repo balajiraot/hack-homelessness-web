@@ -1,7 +1,7 @@
 {
   "userLogins":[
-    {"username":"John","password":"password"},
-    {"username":"test","password":"test"},
-    {"username":"jsmith","password":"test123"}
+    {"username":"mmatho@monsanto.com","password":"password"},
+    {"username":"bband@monsanto.com","password":"test"},
+    {"username":"pmacvy@monsanto.com","password":"test123"}
   ]
 }
