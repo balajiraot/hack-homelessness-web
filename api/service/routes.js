@@ -45,14 +45,14 @@ router.get("/seekers", (req, res) => {
 })
 
 // ** GET - /seekers/recommendations
-// router.get("/seekers/recommendations", (req, res) => {
-//   const { SSN } = req.query;
-//   const clientQueryParams = {
-//     SSN,
-//   };
-//
-//   mongodbDao.getClientBy(clientQueryParams, COC_COLLECTION_NAME, handleResponse(res));
-// })
+router.get("/seekers/recommendations", (req, res) => {
+  const { SSN } = req.query;
+  const clientQueryParams = {
+    SSN,
+  };
+
+  mongodbDao.getClientBy(clientQueryParams, COC_COLLECTION_NAME, handleResponse(res));
+})
 
 // TODO: End iOS Endpoints
 

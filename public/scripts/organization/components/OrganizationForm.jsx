@@ -4,18 +4,7 @@ import { connect } from 'react-redux'
 import CoCInformationForm from '../../coc/components/CoCInformationForm'
 import UnempInformationForm from '../../unemployment/components/CreateUnempInformation'
 import MedicalInformationForm from '../../medical/components/CreateMedicalInformation'
-
-const renderSelect = ({ input, label, meta: { touched, error }, children })  => {
-    return (
-        <div className={touched && error ? 'has-error form-group':'form-group'}>
-            <label className="control-label">{label}</label>
-            <select className="form-control" {...input}>
-                {children}
-            </select>
-            {touched && error && <div><span id="helpBlock2" className="help-block">{error}</span></div>}
-        </div>
-    )
-};
+import { renderSelect, onSelect } from '../../util/renderSelect'
 
 class OrganizationForm extends React.Component {
   constructor(props){
@@ -33,12 +22,6 @@ class OrganizationForm extends React.Component {
       let resultsUnemp = this.refs.unempInformationForm.submit();
       let newformData = Object.assign(resultsUnemp);
         console.log("in form submit after assign  : " + newformData)
-    }
-
-    const onSelect = (event) => {
-      console.log("In onSelect")
-      console.log(event)
-      this.setState({selectType: event.value})
     }
 
     const getComponent = (value)=> {
@@ -87,4 +70,3 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps)(orgReduxForm)
-
