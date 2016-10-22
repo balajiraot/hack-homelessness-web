@@ -4,11 +4,13 @@
 // this file is not transpiled using babel
 const express = require('express');
 const compression = require('compression');
+const bodyParser = require('body-parser')
 require('jade');
 
 const appBaseUrl = '/hack-homelessness-web';
 const connectMongodb = require('./api/mongodb/connection')
 const app = express();
+app.use(bodyParser.json())
 const routes = require('./api/service/routes')
 app.set('view engine', 'jade');
 app.use(compression());

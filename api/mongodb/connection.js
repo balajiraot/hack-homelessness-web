@@ -9,7 +9,7 @@ const connectMongodb =()=>{
       console.error(`Unable to logic database for url ${url}`, err)
     }
     console.log("Connected successfully to server");
-    process.env.db = db;
+    global.db = db;
   });
 }
 
