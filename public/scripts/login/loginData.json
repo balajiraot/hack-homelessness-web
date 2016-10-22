@@ -2,6 +2,7 @@
   "userLogins":[
     {"username":"mmatho@monsanto.com","password":"password"},
     {"username":"bband@monsanto.com","password":"test"},
-    {"username":"pmacvy@monsanto.com","password":"test123"}
+    {"username":"pmacvy@monsanto.com","password":"test123"},
+    {"username":"test","password":"test"}
   ]
 }
