@@ -34,7 +34,7 @@ export function submitLogin(formData,dispatch){
      if(user.username == formData.username && user.password == formData.password) {
         console.log("valid user")
        dispatch(loginSuccess(formData))
-       dispatch(push(`${APP.BASE_PATH}`))
+       dispatch(push(`${APP.BASE_PATH}/info`))
        validUser = true
      }
    }
