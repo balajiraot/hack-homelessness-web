@@ -7,7 +7,7 @@ import SampleLoginForm from './SampleLoginForm'
 class CreateLogin extends React.Component {
   render() {
     return (
-        <div className="col-md-3">
+        <div className="col-md-6">
         <div class="wrapper col-md-3">
           <img class="img-responsive" src=""/>
         </div>
