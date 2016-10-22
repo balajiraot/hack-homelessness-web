@@ -3,6 +3,7 @@ import {Field,reduxForm, formValueSelector} from 'redux-form'
 import { connect } from 'react-redux'
 import CoCInformationForm from '../../coc/components/CoCInformationForm'
 import UnempInformationForm from '../../unemployment/components/CreateUnempInformation'
+import MedicalInformationForm from '../../medical/components/MedicalInformationForm.jsx'
 
 const renderSelect = ({ input, label, meta: { touched, error }, children })  => {
     return (
@@ -38,6 +39,8 @@ class OrganizationForm extends React.Component {
           return <UnempInformationForm/>
         case "Continuum of Care":
           return <CoCInformationForm/>
+        case "Medical":
+          return <MedicalInformationForm/>
         default:
           return null;
       }
