@@ -8,7 +8,12 @@ class CreateLogin extends React.Component {
   render() {
     return (
       <div>
-        <h3>Login</h3>
+        <div class="wrapper col-md-3">
+          <img class="img-responsive" src=""/>
+        </div>
+        <div className="greeting">
+            <h3>Welcome</h3>
+        </div>
         <SampleLoginForm onSubmit={this.props.onSubmitLogin} />
       </div>
     )
