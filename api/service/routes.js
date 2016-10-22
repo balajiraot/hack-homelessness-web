@@ -17,4 +17,11 @@ router.post("/seeker/", (req,res)=>{
 
 })
 
+router.post("/coc/", (req,res)=>{
+    const body = req.body;
+    console.log(body);
+    mongodbDao.save(body,"coc",handleResponse(res))
+
+})
+
 module.exports = router
