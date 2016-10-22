@@ -63,7 +63,6 @@
     "webpack-dev-middleware": "~1.6.1"
   },
   "engines": {
-    "node": "~4.4.4",
-    "npm": "2.15.x"
+    "node": "~6.0.0"
   }
 }
