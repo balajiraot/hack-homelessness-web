@@ -1,8 +1,15 @@
 import React from 'react';
 import {Field,reduxForm, formValueSelector} from 'redux-form'
 import { connect } from 'react-redux'
+import { humanize, titleize } from 'underscore.string'
+import { renderSelect, onSelect } from '../../util/renderSelect'
 
-const validate= (formData) => {
+const genderOptions = [
+  { value: 'male', label: 'Male' },
+  { value: 'female', label: 'Female' },
+]
+
+const validate = (formData) => {
     console.log('in validate : ' + formData.username)
     const errors = {};
     if(!formData.firstName) {
@@ -33,9 +40,11 @@ const validate= (formData) => {
 };
 
 const renderField = ({ input, label, type, meta: { touched, error } }) => {
+  console.log('input = ', input)
+  console.log('label = ', label)
     return (
         <div className={touched && error ? 'has-error form-group':'form-group'}>
-            <label className="control-label">{label}</label>
+            <label className="control-label">{titleize(humanize(label))}</label>
             <input className="form-control" {...input} placeholder={label} type={type}/>
             {touched && error && <div><span id="helpBlock2" className="help-block">{error}</span></div>}
         </div>
@@ -58,7 +67,11 @@ const BasicInformationForm = (props) =>{
                     <Field name="lastName" component={renderField} type="text" label="lastName" placeholder="Last Name"/>
                 </div>
                 <div className="form-group">
-                    <Field name="gender" component={renderField} type="text" label="Gender(M/F/U)" placeholder="Gender"/>
+                  <Field name="gender" component={renderSelect} onChange={onSelect.bind(this)} label="Gender">
+                      <option value="N/A">-Select Gender-</option>
+                      <option value="Male">Male</option>
+                      <option value="Female">Female</option>
+                  </Field>
                 </div>
                 <div className="form-group">
                     <Field name="ethnicity" component={renderField} type="text" label="Ethnicity" placeholder="Ethnicity"/>
@@ -117,4 +130,3 @@ const BasicInformationForm = (props) =>{
 export default reduxForm({
     form: 'basicInformation'  // a unique identifier for this form
 })(BasicInformationForm)
-
