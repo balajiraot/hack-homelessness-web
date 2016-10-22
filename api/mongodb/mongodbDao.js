@@ -9,8 +9,9 @@ mongoDb.save = (obj, collectionName, callback) => {
   collection.insertOne(obj,(err,results)=>{
     if(err){
       console.error("Error while saying obj", err)
+    }else{
+      callback(err,{id:obj._id})
     }
-    callback(err,results)
   })
 }
 
