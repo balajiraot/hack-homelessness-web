@@ -44,8 +44,12 @@ router.get("/seekers", (req, res) => {
   mongodbDao.getClientBy(seekerQueryParams, SEEKER_COLLECTION_NAME, handleResponse(res));
 })
 // ** PUT - /update **
+
+// TODO: End iOS Endpoints
+
+// TODO: Web Endpoints
 // ** GET - /recommendations **
-router.get("coc/client", (req, res) => {
+router.get("/coc/client", (req, res) => {
   const { SSN } = req.query;
   const clientQueryParams = {
     SSN,
@@ -54,12 +58,13 @@ router.get("coc/client", (req, res) => {
   mongodbDao.getClientBy(clientQueryParams, COC_COLLECTION_NAME, handleResponse(res));
 })
 
-// TODO: Web Endpoints
 // ** POST - /coc/client
 router.post("/coc/client", (req, res) => {
     const body = req.body;
     console.log(body);
     mongodbDao.save(body, COC_COLLECTION_NAME, handleResponse(res));
 })
+
+// TODO: End Web Endpoints
 
 module.exports = router
