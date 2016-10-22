@@ -25,7 +25,7 @@ const renderPwdField = ({ input, label, type, meta: { touched, error } }) => {
 const CoCInformationForm = (props) =>{
     const { error, handleSubmit, pristine, reset, submitting } = props
     return (
-        <form onSubmit={handleSubmit}>
+      <div>
                 <div className="form-group">
                     <Field name="centerName" component={renderField} type="text" label="CenterName" placeholder="Center Name"/>
                 </div>
@@ -49,11 +49,13 @@ const CoCInformationForm = (props) =>{
                     <button className="btn btn-primary" type="submit" disabled={pristine || submitting}  >Submit</button>
                     <button className="btn btn-default" type="button" disabled={pristine || submitting} onClick={reset} >Clear</button>
                 </div>
-            </form>
+           </div>
     )
 };
 
-export default reduxForm({
-    form: 'cocInformation'  // a unique identifier for this form
-})(CoCInformationForm)
+//export default reduxForm({
+//    form: 'cocInformation'  // a unique identifier for this form
+//})(CoCInformationForm)
+
+export default CoCInformationForm;
 
