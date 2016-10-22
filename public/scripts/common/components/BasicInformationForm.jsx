@@ -73,10 +73,10 @@ const BasicInformationForm = (props) =>{
                     <Field name="ethnicity" component={renderField} type="text" label="Ethnicity" placeholder="Ethnicity"/>
                 </div>
                 <div className="form-group">
-                    <Field name="ssn" component={renderPwdField} type="password" label="SSN" placeholder="SSN"/>
+                    <Field name="ssn" component={renderField} type="number" label="SSN" placeholder="SSN"/>
                 </div>
                 <div className="form-group">
-                    <Field name="dob" component={renderField} type="text" label="DateOfBirth" placeholder="DateOfBirth"/>
+                    <Field name="dob" component={renderField} type="date" label="DateOfBirth" placeholder="DateOfBirth"/>
                 </div>
                 <div className="form-group">
                     <Field name="addressLine1" component={renderField} type="text" label="Address Line 1" placeholder="Address Line 1"/>
@@ -100,13 +100,13 @@ const BasicInformationForm = (props) =>{
                     <Field name="email" component={renderField} type="text" label="Email" placeholder="Email"/>
                 </div>
                 <div className="form-group">
-                    <Field name="phoneNumber" component={renderField} type="text" label="PhoneNumber" placeholder="PhoneNumber"/>
+                    <Field name="phoneNumber" component={renderField} type="number" label="PhoneNumber" placeholder="PhoneNumber"/>
                 </div>
                 <div className="form-group">
                     <Field name="citizenshipStatus" component={renderField} type="text" label="CitizenshipStatus" placeholder="CitizenshipStatus"/>
                 </div>
                 <div className="form-group">
-                    <Field name="veteran" component={renderField} type="text" label="VeteralStatus" placeholder="VeteranStatus"/>
+                    <Field name="veteran" component={renderField} type="text" label="VeteranStatus" placeholder="VeteranStatus"/>
                 </div>
                 <div className="form-group">
                     <Field name="maritalStatus" component={renderField} type="text" label="MaritalStatus(S/M/D)" placeholder="MaritalStatus"/>
