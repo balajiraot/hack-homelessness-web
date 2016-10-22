@@ -6,24 +6,24 @@ const express = require('express');
 const compression = require('compression');
 const bodyParser = require('body-parser')
 require('jade');
-
+var passport = require('passport');
 const appBaseUrl = '/hack-homelessness-web';
 const connectMongodb = require('./api/mongodb/connection')
+const routes = require('./api/service/routes')
+var authController = require('./api/security/passportAuth');
+
 const app = express();
 app.use(bodyParser.json())
-const routes = require('./api/service/routes')
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
+
 app.set('view engine', 'jade');
+
 app.use(compression());
-
-const addPingPage = () => {
-    // const pingPage = require('./package.json');
-    // console.log(pingPage)
-    // app.get('/ping', pingPage.version);
-    // app.get(`${appBaseUrl}/ping`, pingPage);
-};
-
-addPingPage();
+app.use(passport.initialize());
 connectMongodb();
+
 if ( process.env.NODE_ENV !== 'production' ) {
     const webpackDevMiddleware = require('webpack-dev-middleware');
     const webpack = require('webpack');
@@ -39,7 +39,7 @@ if ( process.env.NODE_ENV !== 'production' ) {
 
 app.use(`${appBaseUrl}/styles`, express.static('./public/styles'));
 app.use(`${appBaseUrl}/scripts`, express.static('./public/scripts'));
-app.use(`${appBaseUrl}/api`, routes)
+app.use(`${appBaseUrl}/api`, authController.isAuthenticated,routes)
 
 app.get('/*', (req, res) => {
     // template is not actually needed because we're not doing server-side rendering... you could pre-render
