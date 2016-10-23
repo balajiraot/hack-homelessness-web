@@ -6,6 +6,11 @@ class RootComponent extends React.Component{
         const {children} = this.props
         return (
             <div>
+              <div id="nav-bar" className="gray-bar">
+                <img className="center-block img-responsive" src="assets/app-logo.png" alt="Harbor" width="200px" height="65px"></img>
+              </div>
+              <div id="logo" className="green-bar">
+              </div>
             {children}
             </div>
         )
