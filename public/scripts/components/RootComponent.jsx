@@ -11,7 +11,10 @@ class RootComponent extends React.Component{
               </div>
               <div id="logo" className="green-bar">
               </div>
-            {children}
+              <div className="row">
+                <div className="col-md-4"></div>
+                <div className="col-md-4">{children}</div>
+              </div>
             </div>
         )
     }

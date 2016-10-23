@@ -55,7 +55,7 @@ const renderField = ({ input, label, type, meta: { touched, error } }) => {
 const BasicInformationForm = (props) =>{
     const { error, handleSubmit, pristine, reset, submitting } = props
     return (
-      <div className="col-md-3">
+      <div>
         <form onSubmit={handleSubmit}>
                 <div className="form-group">
                     <Field name="firstName" component={renderField} type="text" label="FirstName" placeholder="First Name"/>

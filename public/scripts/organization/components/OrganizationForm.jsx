@@ -37,7 +37,7 @@ class OrganizationForm extends React.Component {
       }
     }
     return (
-      <div className="col-md-3">
+      <div>
         <form onSubmit={handleSubmit}>
             <div className="form-group">
                 <Field name="organization" component={renderSelect} onChange={onSelect.bind(this)} label="Organization">

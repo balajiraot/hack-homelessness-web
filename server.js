@@ -39,7 +39,8 @@ if ( process.env.NODE_ENV !== 'production' ) {
 
 app.use(`${appBaseUrl}/styles`, express.static('./public/styles'));
 app.use(`${appBaseUrl}/scripts`, express.static('./public/scripts'));
-app.use(`${appBaseUrl}/api`, authController.isAuthenticated,routes)
+app.use(`${appBaseUrl}/api`, authController.isAuthenticated,routes);
+app.use(`${appBaseUrl}/assets`, express.static('./public/assets'));
 
 app.get('/*', (req, res) => {
     // template is not actually needed because we're not doing server-side rendering... you could pre-render
