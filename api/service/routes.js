@@ -3,8 +3,6 @@ const router = require('express').Router();
 const mongodbDao = require('../mongodb/mongodbDao')
 const COC_COLLECTION_NAME = "coc";
 const SEEKER_COLLECTION_NAME = "seeker";
-const seekerData = require('./seekerData.json');
-
 
 const handleResponse = (res) => (err, results) => {
     if (err) {
