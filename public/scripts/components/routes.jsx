@@ -10,6 +10,7 @@ import CreateCoCInformation from '../coc/components/CreateCoCInformation'
 import CreateUnempInformation from '../unemployment/components/CreateUnempInformation'
 import CreateOrganizationForm from '../organization/components/CreateOrganizationForm'
 import MedicalInformationForm from '../medical/components/MedicalInformationForm'
+import Dashboard from '../dashboard/Dashboard'
 
 
 
@@ -23,6 +24,7 @@ const routes = (
         <Route path="organization" component={CreateOrganizationForm}/>
         <Route path="medical" component={MedicalInformationForm}/>
         <Route path="success" component={Success}/>
+        <Route path="dashboard" component={Dashboard}/>
         <Route path="register" component={Register}/>
     </Route>
 );
