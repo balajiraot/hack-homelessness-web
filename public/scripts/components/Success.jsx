@@ -10,13 +10,11 @@ class Success extends React.Component{
         }
         return (
             <div>
-            <div className='greeting'>
-                <h2>
-                    {` Your client information has been saved successfully.Click Continue to enter more client information.`}
-                </h2>
-            </div>
+            <p className='text-success text-center'>
+                {` Your client information has been saved successfully.Click Continue to enter more client information.`}
+            </p>
             <div className="btn-toolbar">
-            <button className="btn btn-primary" type="button" onClick={gotoInfo}  >Continue</button>
+            <button className="btn btn-primary pull-right" type="button" onClick={gotoInfo}  >Continue</button>
         </div>
         </div>
         );

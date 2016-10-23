@@ -42,7 +42,10 @@ const UnempInformationForm = (props) =>{
                     <Field name="headOfHouseHold" component={renderField} type="text" label="HeadOfHouseHold" placeholder="HeadOfHouseHold"/>
                 </div>
                 <div className="form-group">
-                    <Field name="disablility" component={renderField} type="text" label="Disability" placeholder="Disability"/>
+                    <Field name="disability" component={renderField} type="text" label="Disability" placeholder="Disability"/>
+                </div>
+                <div className="form-group">
+                    <Field name="unemploymentBenefitsClaimed" component={renderField} type="text" label="UnemploymentBenefits(Y/N)" placeholder="UnemploymentBenefits"/>
                 </div>
 
                 <div className="btn-toolbar">
