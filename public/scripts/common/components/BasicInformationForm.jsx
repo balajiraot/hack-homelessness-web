@@ -18,21 +18,21 @@ const validate = (formData) => {
     if(!formData.lastName) {
         errors.lastName = "Enter LastName"
     }
-    if(!formData.addressLine1) {
-        errors.addressLine1 = "Enter AddressLine 1"
-    }
-    if(!formData.city) {
-        errors.city = "Enter City"
-    }
-    if(!formData.state) {
-        errors.state = "Enter State"
-    }
-    if(!formData.country) {
-        errors.country = "Enter Country"
-    }
-    if(!formData.countryOfOrigin) {
-        errors.countryOfOrigin = "Enter CountryOfOrigin"
-    }
+    //if(!formData.addressLine1) {
+    //    errors.addressLine1 = "Enter AddressLine 1"
+    //}
+    //if(!formData.city) {
+    //    errors.city = "Enter City"
+    //}
+    //if(!formData.state) {
+    //    errors.state = "Enter State"
+    //}
+    //if(!formData.country) {
+    //    errors.country = "Enter Country"
+    //}
+    //if(!formData.countryOfOrigin) {
+    //    errors.countryOfOrigin = "Enter CountryOfOrigin"
+    //}
     if(!formData.ssn) {
         errors.ssn = "Enter SSN"
     }
@@ -128,5 +128,6 @@ const BasicInformationForm = (props) =>{
 };
 
 export default reduxForm({
-    form: 'basicInformation'  // a unique identifier for this form
+    form: 'basicInformation',
+    validate// a unique identifier for this form
 })(BasicInformationForm)
