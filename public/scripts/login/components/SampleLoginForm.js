@@ -27,7 +27,7 @@ const SubmitValidationForm = (props) => {
       {error && <strong>{error}</strong>}
             </div>
         <div className="greeting btn-toolbar">
-        <button className="btn btn-primary form-group" type="submit" disabled={submitting}>Login</button>
+        <button className="btn btn-harbor form-group" type="submit" disabled={submitting}>Login</button>
         <button className="btn btn-default form-group" type="button" onClick={register}>Register</button>
         </div>
     </form>

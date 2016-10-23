@@ -49,7 +49,7 @@ const UnempInformationForm = (props) =>{
                 </div>
 
                 <div className="btn-toolbar">
-                    <button className="btn btn-primary" type="submit" disabled={pristine || submitting}  >Submit</button>
+                    <button className="btn btn-harbor" type="submit" disabled={pristine || submitting}  >Submit</button>
                     <button className="btn btn-default" type="button" disabled={pristine || submitting} onClick={reset} >Clear</button>
                 </div>
             </div>

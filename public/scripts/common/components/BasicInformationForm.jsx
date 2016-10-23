@@ -119,7 +119,7 @@ const BasicInformationForm = (props) =>{
 
 
                 <div className="btn-toolbar">
-                    <button className="btn btn-primary" type="submit" disabled={pristine || submitting}  >Next</button>
+                    <button className="btn btn-harbor" type="submit" disabled={pristine || submitting}  >Next</button>
                     <button className="btn btn-default" type="button" disabled={pristine || submitting} onClick={reset} >Clear</button>
                 </div>
             </form>
