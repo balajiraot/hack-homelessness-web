@@ -50,6 +50,7 @@
     "react-redux": "~4.4.5",
     "react-router": "~2.6.1",
     "react-router-redux": "~4.0.5",
+    "react-simpletabs": "~0.7.0",
     "redux": "~3.5.2",
     "redux-form": "6.0.2",
     "redux-logger": "~2.6.1",
@@ -58,16 +59,15 @@
     "sinon": "~1.17.4",
     "sinon-as-promised": "~4.0.0",
     "sinon-chai": "~2.8.0",
+    "superagent": "~2.1.0",
+    "superagent-promise": "~1.1.0",
     "underscore": "~1.8.3",
     "webpack": "~1.13.1",
     "webpack-dev-middleware": "~1.6.1",
-    "superagent": "~2.1.0",
-    "superagent-promise": "~1.1.0"
+    "underscore.string": "~3.3.4"
   },
   "engines": {
     "node": "~6.0.0"
-  },
-  "devDependencies": {
-    "underscore.string": "~3.3.4"
   }
+
 }
